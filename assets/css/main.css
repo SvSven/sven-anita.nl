@@ -42,6 +42,7 @@ html, body {
     background: rgba(32, 156, 238, 0.8);
     overflow: hidden;
     color: #fff;
+    margin-bottom: 3em;
 }
 
 .hero:before {
@@ -58,8 +59,34 @@ html, body {
 
 .section {
     padding: 3em 1.5em;
+    margin-bottom: 3em;
+}
+
+.section-title {
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed';
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.content p {
+    line-height: 1.5em;
+}
+
+.content p:first-child:first-letter {
+    font-size: 3em;
+    line-height: 0.8em;
+    padding-right: 5px;
+    font-weight: bold;
+    font-family: 'Georgia', 'Times New Roman', 'serif';
 }
 
 .timer > span {
     font-weight: bold;
+}
+
+figcaption {
+    margin: 0.5em 0 0.5em 0;
+    font-size: 0.8em;
+    font-style: italic;
 }
