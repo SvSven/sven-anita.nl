@@ -1,33 +1,65 @@
 html, body {
     font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+.hero-foot {
+    padding: 1.5em;
+    background: #2962FF;
+}
+
+.typed-title {
+    font-size: 4em;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+}
+
+.typed-cursor {
+    font-size: 4em;
+    font-weight: 700;
+    font-family: 'Roboto Condensed';
+}
+
+.typed-cursor.typed-cursor--blink {
+    opacity: 1;
+    animation: typedjsBlink 1s infinite!important;
+}
+
+@keyframes typedjsBlink {
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+.hero-content {
+    margin-top: 1em;
+    line-height: 2em;
+    max-width: 700px;
+}
+
+.hero {
+    position: relative;
+    background: rgba(32, 156, 238, 0.8);
+    overflow: hidden;
+    color: #fff;
+}
+
+.hero:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('../img/loevestein_bg_hd.jpg') no-repeat center center /cover;
+    content: '';
+    z-index: -1;
 }
 
 .section {
     padding: 3em 1.5em;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.header {
-    background: #1A237E;
-    text-align: center;
-}
-
-.header__title,
-.header__timer {
-    color: #fff;
-    margin: 0;
-    padding: 0;
-}
-
-.header__title {
-    margin-bottom: 1em;
-}
-
-.header__timer > span {
+.timer > span {
     font-weight: bold;
 }

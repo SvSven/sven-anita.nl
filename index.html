@@ -6,20 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sven &amp; Anita</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <header class="section header">
-        <div class="container">
-            <h1 class="header__title">8th of October, 2018</h1>
-            <p class="header__timer">
-                <span class="months"></span> months <span class="days"></span> days <span class="hours"></span> hours <span class="minutes"></span> minutes <span class="seconds"></span> seconds
-            </p>
+    <section class="hero is-medium">
+        <div class="hero-head">
         </div>
-    </header>
+
+        <div class="hero-body">
+            <div class="container">
+                <span class="typed-title"></span>
+                <p class="hero-content">After 10 years we have decided that the time has finally come. On the 8th of October 2018 we will be getting married at Slot Loevestein in the Netherlands.</p>
+            </div>
+        </div>
+
+        <div class="hero-foot">
+            <div class="container has-text-centered">
+                <p class="timer">
+                    <span class="months"></span> months <span class="days"></span> days <span class="hours"></span> hours <span class="minutes"></span> minutes <span class="seconds"></span> seconds
+                </p>
+            </div>
+        </div>
+    </section>
 
     <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/typed.min.js"></script>
+    <script>
+        var options = {
+            strings: ["Ja, vi skal gifte oss.", "Yes, we are getting married.", "Ja, wij gaan trouwen."],
+            typeSpeed: 40,
+            backSpeed: 20,
+            backDelay: 2500,
+            loop: true,
+            showCursor: true
+        }
+
+        var typed = new Typed(".typed-title", options);
+    </script>
 </body>
 </html>
