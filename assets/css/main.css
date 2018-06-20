@@ -134,6 +134,10 @@ html, body {
     font-family: 'Georgia', 'Times New Roman', 'serif';
 }
 
+.timer {
+    font-size: 16px;
+}
+
 .timer > span {
     font-weight: bold;
 }
