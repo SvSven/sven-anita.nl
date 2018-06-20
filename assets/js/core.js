@@ -16,3 +16,8 @@ var timerId = countdown(new Date('2018-10-08'), function(ts) {
     document.querySelector('.minutes').innerHTML = ts.minutes;
     document.querySelector('.seconds').innerHTML = ts.seconds;
 }, countdown.MONTHS|countdown.DAYS|countdown.HOURS|countdown.MINUTES|countdown.SECONDS);
+
+var footerBtn = document.querySelector('.dismiss-footer');
+footerBtn.addEventListener('click', function(){
+    document.querySelector('.sticky-footer').style.display = "none";
+});

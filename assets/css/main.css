@@ -147,3 +147,24 @@ figcaption {
     font-size: 0.8em;
     font-style: italic;
 }
+
+.sticky-footer {
+    width: 100%;
+    padding: 1em;
+    background: #546E7A;
+    font-size: 14px;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.sticky-footer p {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.dismiss-footer {
+    display: block;
+}
