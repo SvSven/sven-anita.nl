@@ -8,16 +8,69 @@ html, body {
     background: #2962FF;
 }
 
+.typed-container {
+    min-height: 125px;
+    vertical-align: top;
+}
+
 .typed-title {
-    font-size: 4em;
     font-family: 'Roboto Condensed';
     font-weight: 700;
 }
 
 .typed-cursor {
-    font-size: 4em;
     font-weight: 700;
     font-family: 'Roboto Condensed';
+}
+
+.typed-title,
+.typed-cursor {
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+@media (min-width: 321px) {
+    .typed-container {
+        min-height: 135px;
+    }
+
+    .typed-title,
+    .typed-cursor {
+        font-size: 2.5em;
+    }
+}
+
+@media (min-width: 481px) {
+    .typed-container {
+        min-height: 145px;
+    }
+
+    .typed-title,
+    .typed-cursor {
+        font-size: 2.5em;
+    }
+}
+
+@media (min-width: 768px) {
+    .typed-container {
+        min-height: 100px;
+    }
+
+    .typed-title,
+    .typed-cursor {
+        font-size: 3em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .typed-container {
+        min-height: 100px;
+    }
+
+    .typed-title,
+    .typed-cursor {
+        font-size: 4em;
+    }
 }
 
 .typed-cursor.typed-cursor--blink {
