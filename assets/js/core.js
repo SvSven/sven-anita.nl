@@ -21,3 +21,24 @@ var footerBtn = document.querySelector('.dismiss-footer');
 footerBtn.addEventListener('click', function(){
     document.querySelector('.sticky-footer').style.display = "none";
 });
+
+function initMap() {
+	map = new L.Map('map');
+	map.setView(new L.LatLng(52.088778, 5.092849), 9);
+
+	var tileUrl = 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png';
+	var tileAttrb = '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>';
+	var mapTiles = new L.TileLayer(tileUrl, { minZoom: 8, attribution: tileAttrb });
+    map.addLayer(mapTiles);
+
+    L.marker([51.816432, 5.021330]).bindTooltip("Slot Loevestein", {
+        permanent: true,
+        direction: 'right',
+    }).addTo(map);
+
+    L.marker([52.309494, 4.763654]).bindTooltip("Amsterdam Schiphol Airport", {
+        permanent: true,
+        direction: 'right',
+    }).addTo(map);
+}
+initMap();
