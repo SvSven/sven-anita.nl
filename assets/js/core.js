@@ -1,3 +1,30 @@
+// Enable functionality of mobile navbar burger
+var mobileMenu = document.getElementById('mobile-menu');
+var mobileMenuIcon = document.querySelector('.navbar-burger');
+mobileMenuIcon.addEventListener('click', function() {
+    this.classList.toggle('is-active');
+    mobileMenu.classList.toggle('is-active');
+});
+
+// Single page navigation using animated-scroll-to.js
+// https://github.com/Stanko/animated-scroll-to
+var navbarHeight = document.querySelector('.navbar').offsetHeight;
+var navLinks = document.querySelectorAll('.navbar-item');
+navLinks.forEach(function(el) {
+    el.addEventListener('click', function() {
+        var target = document.querySelector(el.dataset.anchor);
+        var options = {
+            offset: parseInt('-' + navbarHeight)
+        }
+        animateScrollTo(target, options);
+
+        if(mobileMenu.classList.contains('is-active')) {
+            mobileMenu.classList.toggle('is-active');
+            mobileMenuIcon.classList.toggle('is-active');
+        }
+    });
+});
+
 var options = {
     strings: ["Ja, vi skal gifte oss.", "Yes, we are getting married.", "Ja, wij gaan trouwen."],
     typeSpeed: 40,
