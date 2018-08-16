@@ -159,7 +159,7 @@ body {
     line-height: 1.5em;
 }
 
-.content p:first-child:first-letter {
+#location .content p:first-child:first-letter {
     font-size: 3em;
     line-height: 0.8em;
     padding-right: 5px;
