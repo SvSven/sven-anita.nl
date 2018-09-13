@@ -37,7 +37,6 @@ var options = {
 var typed = new Typed(".typed-title", options);
 
 var timerId = countdown(new Date('2018-10-08'), function(ts) {
-    document.querySelector('.months').innerHTML = ts.months;
     document.querySelector('.days').innerHTML = ts.days;
     document.querySelector('.hours').innerHTML = ts.hours;
     document.querySelector('.minutes').innerHTML = ts.minutes;
