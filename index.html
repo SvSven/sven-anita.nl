@@ -6,200 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sven &amp; Anita</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-    <link rel="stylesheet" href="assets/css/bulma-timeline.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <nav class="navbar is-fixed-top">
-        <div class="container">
-            <div class="navbar-brand">
-                <div class="navbar-burger burger" data-target="mobile-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            <div id="mobile-menu" class="navbar-menu">
-                <div class="navbar-end">
-                    <a class="navbar-item" data-anchor="#intro">Home</a>
-                    <a class="navbar-item" data-anchor="#location">Location</a>
-                    <a class="navbar-item" data-anchor="#accommodations">Accommodations</a>
-                    <a class="navbar-item" data-anchor="#schedule">Schedule</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <section id="intro" class="hero is-medium">
-        <div class="hero-head">
-        </div>
-
-        <div class="hero-body">
-            <div class="container">
-                <div class="typed-container">
-                    <span class="typed-title"></span>
-                </div>
-                <p class="hero-content">After 10 years we have decided that the time has finally come. On the 8th of October 2018 we will be getting married at Slot Loevestein in the Netherlands.</p>
-            </div>
-        </div>
-
-        <div class="hero-foot">
-            <div class="container has-text-centered">
-                <p class="timer">
-                    <span class="days"></span> days <span class="hours"></span> hours <span class="minutes"></span> minutes <span class="seconds"></span> seconds
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="location" class="section location-section">
-        <div class="container">
-
-            <h2 class="section-title">Location</h2>
-
-            <div class="columns">
-                <div class="column">
-                    <figure class="image">
-                        <img class="is-3by2" src="assets/img/loevestein_lucht.jpg" alt="Slot Loevestein from the air">
-                        <figcaption>Slot Loevestein is surrounded by bastion fortifications typical of Dutch castles and fortified cities.</figcaption>
-                    </figure>
-                </div>
-
-                <div class="column content">
-                    <p>The wedding will be held at the medieval castle <i>Slot Loevestein</i> located at the intersection of the rivers Waal and Maas. Built between 1357 and 1368 on orders of the knight Dirk Loef van Horne, the castle has a rich history and served as an important strategic fortification from the time it was built until World War II.</p>
-
-                    <p>As was the case with many Dutch fortifications, Loevestein made use of its natural surroundings (particularly the water) for its defenses and was a key part of the <a href="https://en.wikipedia.org/wiki/Hollandic_Water_Line" target="_blank" rel="noopener noreferrer">Hollandic Water Line</a>, a series of water based defenses and fortifications aimed to keep the province of Holland safe from land based attacks.</p>
-
-                    <p>From 1619 the castle was used as a state prison for political prisoners. Notable amongst its prisoners was Hugo de Groot (Hugo Grotius), a Dutch jurist and writter, who laid the foundations for international law based on natural law.</p>
-
-                    <p>Today Loevestein is open to the public, with the castle and surrounding fortifications preserved in excellent condition. You can learn more about Loevestein on <a href="https://www.slotloevestein.nl/en/" target="_blank" rel="noopener noreferrer">www.slotloevestein.nl</a>.</p>
-                </div>
-            </div>
-
-            <div id="map"></div>
-        </div>
-    </section>
-
-    <section id="accommodations" class="section">
-        <div class="container">
-            <h2 class="section-title">Accommodations</h2>
-
-            <div class="columns">
-                <div class="column content">
-                    <p>Slot Loevestein is located about 1 hour and 20 minutes away from Amsterdam Airport Schiphol. It is accessible by car, bicycle or on foot.</p>
-                    <p><a href="https://www.vandervalkzaltbommel.nl/en">Van Der Valk Hotel Zaltbommel</a> is a 20 minutes drive away from Slot Loevestein by car. This hotel is also located within walking distance of the Zaltbommel trainstation, making it easily accessibly if you are traveling by train from Schiphol Airport (an aproximately 1 hour and 27 train ride).</p>
-                    <p>You can find more information about this hotel here: <a href="https://www.vandervalkzaltbommel.nl/en">www.vandervalkzaltbommel.nl</a></p>
-                    <p>If you would rather stay at another hotel/B&amp;B or rent through AirBnB the following are suggested places that are within reasonable driving distance of Slot Loevestein:</p>
-                    <ul>
-                        <li>Woudrichem</li>
-                        <li>Gorinchem</li>
-                        <li>Zaltbommel</li>
-                        <li>Heusden</li>
-                        <li>'s-Hertogenbosch</li>
-                    </ul>
-
-                    <p>
-                        <a target="_blank" rel="noopener" href="https://www.booking.com/searchresults.html?label=gen173nr-1FCAEoggJCAlhYSDNYBGiqAYgBAZgBMcIBCndpbmRvd3MgMTDIARTYAQHoAQH4AQKSAgF5qAID;sid=8c96e0ec2fc802b34f32e2b564f3769d;class_interval=1&dtdisc=0&from_sf=1&group_adults=2&group_children=0&inac=0&index_postcard=0&label_click=undef&map=1&no_rooms=1&offset=0&place_id=ChIJvVwy2SSPxkcRQbNF4At58BM&place_id_lat=51.8164253&place_id_lon=5.0213512&postcard=0&raw_dest_type=landmark&room1=A%2CA&sb_price_type=total&search_selected=1&src=index&src_elem=sb&ss=Loevestein%20Castle%2C%20Loevestein%2C%20Poederoijen%2C%20Netherlands&ss_all=0&ss_raw=slot%20loevestein&ssb=empty&sshis=0&#map_opened">You can also click here If you would like to see a list of available hotels and B&amp;B's in the area.</a> If the link does not work, search for "Slot Loevestein" or "Loevestein Castle" on <a target="_blank" rel="noopener" href="https://www.booking.com">booking.com</a></p>
-                        <p>You are of course more than welcome to contact us for help and/or suggestions on accomodations.</p>
-                </div>
-
-                <div class="column">
-                    <figure class="image">
-                        <img class="is-3by2" src="assets/img/loevestein_sheep.jpg" alt="Slot Loevestein from the air">
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="schedule" class="section">
-        <div class="container">
-            <h2 class="section-title">Schedule</h2>
-
-            <div class="columns">
-                <div class="column">
-                    <div class="timeline no-headers">
-                        <div class="timeline-item is-primary is-first">
-                            <div class="timeline-marker is-primary"></div>
-                            <div class="timeline-content">
-                                <p class="heading">14:30 - <i>Starshade tent</i></p>
-                                <p>Arrival guests at Slot Loevestein</p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item is-primary">
-                            <div class="timeline-marker is-primary"></div>
-                            <div class="timeline-content">
-                                <p class="heading">15:00 - <i>Arsenaal</i></p>
-                                <p>Ceremony</p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item is-primary">
-                            <div class="timeline-marker is-primary"></div>
-
-                            <div class="timeline-content">
-                                <p class="heading">16:00 - <i>Starshade tent</i></p>
-                                <p>Toast, congratulations &amp; cutting of the cake</p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item is-primary">
-                            <div class="timeline-marker is-primary"></div>
-
-                            <div class="timeline-content">
-                                <p class="heading">17:00 - <i>Castle</i></p>
-                                <p>Start guided tour of Loevestein Castle (in English)</p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item is-primary">
-                            <div class="timeline-marker is-primary"></div>
-
-                            <div class="timeline-content">
-                                <p class="heading">18:00 - <i>Arsenaal</i></p>
-                                <p>Dinner</p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item is-primary is-last">
-                            <div class="timeline-marker is-primary"></div>
-
-                            <div class="timeline-content">
-                                <p class="heading">22:00</p>
-                                <p>Expected end</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column content">
-                    <h5>Ceremony</h5>
-                    <p>The ceremony will be led by a special civil servant of the municipality of Zaltbommel. Due to this being an official Dutch marriage, most of the ceremony will be in Dutch.</p>
-
-                    <h5>Guided tour</h5>
-                    <p>After the toasting and cutting of the cake, guests will have the opportunity to join on a guided tour of the castle. This tour will be done in English so as to best accomodate both sides of the family.</p>
-
-                    <h5>Dinner</h5>
-                    <p>The dinner will be a barbeque buffet with a variety of different meals. If you have any special dietary requirements, please let us know well beforehand so that we can do our best to accomodate these requirements.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <div class="sticky-footer has-text-centered">
-        <p>This website is being updated regularly. More information will be added soon.</p>
-        <a class="delete dismiss-footer"></a>
+    <div class="wrapper">
+        <p class="timer">
+            <span id="years"></span>
+            <span id="months"></span>
+            <span id="days"></span>
+            <span id="hours"></span>
+            <span id="minutes"></span>
+            <span id="seconds"></span>
+        </p>
     </div>
 
-    <script src="assets/js/animated-scroll-to.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
     <script src="assets/js/countdown.js"></script>
-    <script src="assets/js/typed.min.js"></script>
     <script src="assets/js/core.js"></script>
 </body>
 </html>
