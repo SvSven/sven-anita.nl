@@ -1,0 +1,33 @@
+:root {
+  --typeScale-0: clamp(calc(13.33 / 16 * 1rem), 0.28vw + 0.77rem, calc(17.6 / 16 * 1rem));
+  --typeScale-1: clamp(calc(16 / 16 * 1rem), 0.39vw + 0.91rem, calc(22 / 16 * 1rem));
+  --typeScale-2: clamp(calc(19.2 / 16 * 1rem), 0.54vw + 1.07rem, calc(27.5 / 16 * 1rem));
+  --typeScale-3: clamp(calc(23.04 / 16 * 1rem), 0.73vw + 1.27rem, calc(34.38 / 16 * 1rem));
+  --fontWeight-normal: 400;
+  --fontWeight-bold: 700;
+
+  --space-small: calc(8 / 16 * var(--typeScale-1));
+  --space-medium: calc(16 / 16 * var(--typeScale-1));
+  --space-large: calc(24 / 16 * var(--typeScale-1));
+  --space-xLarge: calc(32 / 16 * var(--typeScale-1));
+
+  --color-white: rgb(255, 255, 255);
+  --color-blue: rgb(91, 177, 253);
+  --color-darkBlue: rgb(11, 34, 55);
+
+  font-family: 'Alkatra', cursive;
+  font-size: var(--typeScale-1);
+  line-height: 1.5;
+  font-weight: var(--fontWeight-normal);
+  color: var(--color-white);
+}
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('./assets/loevestein.jpg') no-repeat center center;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
