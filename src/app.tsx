@@ -2,6 +2,9 @@ import { Timer } from './components/Timer'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat'
+import { getBackgroundImage } from './util'
+import Router from 'preact-router'
+import { useEffect } from 'preact/hooks'
 
 dayjs.extend(advancedFormat)
 
@@ -24,13 +27,30 @@ const Wrapper = styled.div`
 `
 
 export function App() {
-  const startDate = '2018-10-08 15:30'
+  return (
+    <Router>
+      <Page path="/" date="2018-10-08 15:30" />
+      <Page path="/emma" date="2023-01-29 05:27" />
+    </Router>
+  )
+}
+
+type PageProps = {
+  path: string
+  date: string
+}
+
+const Page = ({ date, path }: PageProps) => {
+  useEffect(() => {
+    const backgroundImg = getBackgroundImage(path)
+    document.body.style.background = `no-repeat center center linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImg})`
+  }, [path])
 
   return (
     <Container>
-      <StyledHeading>{dayjs(startDate).format('dddd, MMMM Do YYYY')}</StyledHeading>
+      <StyledHeading>{dayjs(date).format('dddd, MMMM Do YYYY')}</StyledHeading>
       <Wrapper>
-        <Timer startDate={startDate} />
+        <Timer startDate={date} />
       </Wrapper>
     </Container>
   )
