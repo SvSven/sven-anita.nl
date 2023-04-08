@@ -11,3 +11,7 @@ export const getBackgroundImage = (path: string): string => {
       return imgLoevestein
   }
 }
+
+export const paddDuration = (value: number): string => (value < 10 ? `0${value}` : `${value}`)
+
+export const roundDuration = (value: number): number => parseFloat(value.toFixed(1))

@@ -1,12 +1,16 @@
 import { Timer } from './components/Timer'
+import { TimerControls } from './components/TimerControls'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat'
+import duration from 'dayjs/plugin/duration'
 import { getBackgroundImage } from './util'
 import Router from 'preact-router'
-import { useEffect } from 'preact/hooks'
+import { useEffect, useState } from 'preact/hooks'
+import type { Duration } from 'dayjs/plugin/duration'
 
 dayjs.extend(advancedFormat)
+dayjs.extend(duration)
 
 const Container = styled.div`
   margin: 0 auto;
@@ -40,18 +44,33 @@ type PageProps = {
   date: string
 }
 
+const getTimeSince = (date: string): Duration => dayjs.duration(dayjs().diff(date))
+
 const Page = ({ date, path }: PageProps) => {
+  const [duration, setDuration] = useState<Duration | null>(getTimeSince(date))
+
+  useEffect(() => {
+    const interval = setInterval(() => setDuration(getTimeSince(date)), 1000)
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [setDuration, getTimeSince])
+
   useEffect(() => {
     const backgroundImg = getBackgroundImage(path)
-    document.body.style.background = `no-repeat center center linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImg})`
+    document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImg})`
   }, [path])
 
   return (
     <Container>
       <StyledHeading>{dayjs(date).format('dddd, MMMM Do YYYY')}</StyledHeading>
-      <Wrapper>
-        <Timer startDate={date} />
-      </Wrapper>
+      {duration && (
+        <Wrapper>
+          <Timer duration={duration} />
+          <TimerControls duration={duration} />
+        </Wrapper>
+      )}
     </Container>
   )
 }
